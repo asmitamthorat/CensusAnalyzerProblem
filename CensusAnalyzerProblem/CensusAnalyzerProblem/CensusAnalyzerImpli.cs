@@ -17,5 +17,16 @@ namespace CensusAnalyzerProblem
             }
             return IndiaStateCodeCsvList;
         }
+
+
+
+        public List<IndiaStateCode> sortByStateCode(String Path) {
+            List<IndiaStateCode> ListOfStateCode = loadingStateCensusCSV(Path);
+            ListOfStateCode.Sort(delegate (IndiaStateCode c1, IndiaStateCode c2) { return c1.StateCode.CompareTo(c2.StateCode); });
+            return ListOfStateCode;
+
+
+
+        }
     }
 }
